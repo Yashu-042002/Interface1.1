@@ -1,0 +1,290 @@
+/* Base Styling */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+/* Heading Styling */
+h1 {
+  font-size: 24px;
+  color: #00162e;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  text-align: center;
+}
+
+h2 {
+  padding: 0 10px;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* Form Styling */
+form {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #007bff;
+  background-color: #e9f2ff;
+  border-radius: 5px;
+  width: 95%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Choose File Button */
+input[type='file']{
+  margin: 10px 0;
+}
+input::file-selector-button {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px dashed #007bff;
+  background-color: transparent;
+  color: #007bff;
+  border-radius: 5px;
+  text-align: center;
+}
+
+input::file-selector-button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+/* Button Styling */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Table Styling */
+table {
+  width: 95%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 14px;
+  background-color: #ffffff;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th {
+  padding: 8px;
+  text-align: left;
+  background-color: #00162e;
+  color: white;
+}
+
+td {
+  padding: 8px;
+  text-align: left;
+  font-size: 13px;
+}
+
+td.important {
+  color: #d9534f;
+}
+
+/* Pagination Styling */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination a {
+  padding: 8px 16px;
+  margin: 0 4px;
+  border: 1px solid #ddd;
+  text-decoration: none;
+  color: #007bff;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.pagination a.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination a:hover {
+  background-color: #0056b3;
+}
+
+/* Navigation Bar Styling */
+nav {
+  background-color: #00162e;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 5px 10px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Link Styling */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Searchbar */
+#searchInput {
+  display: block;
+  width: 95%;
+  padding: 10px;
+  margin: 10px auto;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#searchInput:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Footer Styling */
+.footer {
+  position: absolute;
+  bottom: 0;
+  padding: 10px 0;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  font-size: 14px;
+  margin-top: 100px;
+}
+
+/* Media Queries for Mobile View */
+@media (max-width: 768px) {
+  h1 {
+      font-size: 22px;
+  }
+
+  h2 {
+      font-size: 18px;
+  }
+
+  nav ul li {
+      margin: 5px;
+  }
+
+  table, th, td {
+      font-size: 12px;
+  }
+
+  .pagination a {
+      font-size: 12px;
+      padding: 6px 12px;
+  }
+
+  form {
+      padding: 8px;
+  }
+
+  button {
+      padding: 8px;
+      font-size: 14px;
+  }
+
+  input::file-selector-button {
+      padding: 8px 16px;
+      font-size: 14px;
+  }
+
+  #searchInput {
+      padding: 8px;
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+      font-size: 20px;
+  }
+
+  h2 {
+      font-size: 16px;
+  }
+
+  nav ul li {
+      margin: 3px;
+  }
+
+  table, th, td {
+      font-size: 10px;
+  }
+
+  .pagination a {
+      font-size: 10px;
+      padding: 4px 8px;
+  }
+
+  form {
+      padding: 6px;
+  }
+
+  button {
+      padding: 6px;
+      font-size: 12px;
+  }
+
+  input::file-selector-button {
+      padding: 6px 12px;
+      font-size: 12px;
+  }
+
+  #searchInput {
+      padding: 6px;
+      font-size: 12px;
+  }
+
+  .footer {
+      font-size: 12px;
+  }
+}

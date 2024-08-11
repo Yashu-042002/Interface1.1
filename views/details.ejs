@@ -1,0 +1,78 @@
+<%- include('layout', { title: 'Detail Page' }) %>
+
+<h1>Details for Master Enq No <%= details['Master Enq No'] %></h1>
+<table>
+  <tr>
+    <th>Branch</th>
+    <td><%= details.Branch %></td>
+  </tr>
+  <tr>
+    <th>Company</th>
+    <td><%= details.Company %></td>
+  </tr>
+  <tr>
+    <th>Sales Person</th>
+    <td><%= details['Sales Person'] %></td>
+  </tr>
+  <tr>
+    <th>Quote Value</th>
+    <td class="important"><%= details['Quote Value'] %></td> <!-- Highlighted -->
+  </tr>
+  <tr>
+    <th>Final Quote Value</th>
+    <td class="important"><%= details['Final Quote Value'] %></td> <!-- Highlighted -->
+  </tr>
+  <tr>
+    <th>Status</th>
+    <td><%= details.Status %></td>
+  </tr>
+  <tr>
+    <th>Mail Date of Survey</th>
+    <td><%= details['Mail Date of Survey'].join(', ') %></td>
+  </tr>
+  <tr>
+    <th>Actual Survey Done</th>
+    <td><%= details['Actual Survey Done'].join(', ') %></td>
+  </tr>
+  <tr>
+    <th>Estimation Date</th>
+    <td><%= details['Estimation Date'].join(', ') %></td>
+  </tr>
+  <tr>
+    <th>Estimation Amount</th>
+    <td><%= details['Estimation Amount'].join(', ') %></td>
+  </tr>
+  <tr>
+    <th>Quotation Ref & Date</th>
+    <td><%= details['Quotation Ref & Date'].join(', ') %></td>
+  </tr>
+  <tr>
+    <th>Quotation Value & Submission Date</th>
+    <td><%= details['Quotation Value & Submission Date'].join(', ') %></td>
+  </tr>
+  <tr>
+    <th>Date of Next Contact</th>
+    <td><%= details['Date of Next Contact'].join(', ') %></td>
+  </tr>
+  <tr>
+    <th>Next Action</th>
+    <td>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Date of Next Contact</th>
+            <th>Next Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% details['Next action'].forEach((action, index) => { %>
+            <tr>
+              <td><%= details['Date of Next Contact'][index] %></td>
+              <td><%= action %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+</table>

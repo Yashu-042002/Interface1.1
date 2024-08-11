@@ -1,0 +1,83 @@
+<body>
+
+    <%- include('layout', { title: 'Processed Data' }) %>
+    
+    <h1>Processed Data</h1>
+    
+    <!-- Search Bar -->
+    <input type="text" id="searchInput" placeholder="Search here..." onkeyup="filterTable()">
+    
+    <% if (data && Object.keys(data).length > 0) { %>
+      <h2>Data Table</h2>
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th>Master Enq No</th>
+            <th>Branch</th>
+            <th>Company</th>
+            <th>Sales Person</th>
+            <th>Quote Value</th>
+            <th>Final Quote Value</th>
+            <th>Status</th>
+            <th>View Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (const [masterEnqNo, details] of Object.entries(data.entries)) { %>
+            <tr>
+              <td><%= masterEnqNo %></td>
+              <td><%= details.Branch %></td>
+              <td><%= details.Company %></td>
+              <td><%= details['Sales Person'] %></td>
+              <td><%= details['Quote Value'] %></td>
+              <td><%= details['Final Quote Value'] %></td>
+              <td><%= details.Status %></td>
+              <td><a href="/details/<%= details.ID %>">View Details</a></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+    
+      <!-- Pagination Controls -->
+      <div class="pagination">
+        <% if (pagination.prevPage) { %>
+          <a href="/results?page=<%= pagination.prevPage %>">&laquo; Previous</a>
+        <% } %>
+        <% for (let i = 1; i <= pagination.totalPages; i++) { %>
+          <a href="/results?page=<%= i %>" class="<%= i === pagination.currentPage ? 'active' : '' %>"><%= i %></a>
+        <% } %>
+        <% if (pagination.nextPage) { %>
+          <a href="/results?page=<%= pagination.nextPage %>">Next &raquo;</a>
+        <% } %>
+      </div>
+    <% } else { %>
+      <p>No data available.</p>
+    <% } %>
+    
+    <!-- Add JavaScript for Search Functionality -->
+    <script>
+      function filterTable() {
+        var input, filter, table, tr, td, i, j, txtValue;
+        input = document.getElementById("searchInput");
+        filter = input.value.toLowerCase();
+        table = document.getElementById("dataTable");
+        tr = table.getElementsByTagName("tr");
+    
+        for (i = 1; i < tr.length; i++) { // Start from 1 to skip the header row
+          tr[i].style.display = "none"; // Hide the row initially
+          td = tr[i].getElementsByTagName("td");
+          for (j = 0; j < td.length; j++) {
+            if (td[j]) {
+              txtValue = td[j].textContent || td[j].innerText;
+              if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                tr[i].style.display = ""; // Show the row if a match is found
+                break; // Stop searching in the current row if a match is found
+              }
+            }
+          }
+        }
+      }
+    </script>
+    
+    </body>
+    

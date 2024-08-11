@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload and Display</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/results?page=1">Results</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <h1>Upload Excel File</h1>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".xlsx" required>
+    <button type="submit">Upload</button>
+  </form>
+  
+  <footer class="footer">
+    &copy; 2024 Your Company
+  </footer>
+</body>
+</html>
